@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { OBTENER_PUBLICACIONES, OBTENER_CATEGORIAS } from '../queries';
-import ImageUpload from '../components/imageUpload';
+import ImageUpload from '../components/ImageUpload';
 import Swal from 'sweetalert2';
 
 const CREAR_PUBLICACION = gql`
