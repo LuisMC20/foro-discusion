@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import { ApolloProvider } from '@apollo/client';
+import client from '../config/apollo';
+import { AuthProvider } from '../context/authContext';
+import Modal from 'react-modal';
+Modal.setAppElement('#__next');
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <ApolloProvider client={client}>
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </ApolloProvider>
+  );
+};
 
-export default MyApp
+export default MyApp;
