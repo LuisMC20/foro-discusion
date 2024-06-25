@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import LayoutGestion from '../components/LayoutGestion';
-import ImageUpload from '../components/imageUpload';
+import ImageUpload from '../components/ImageUpload';
 
 const OBTENER_ANUNCIOS = gql`
   query ObtenerAnuncios {
