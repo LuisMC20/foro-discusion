@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 const createApolloClient = (token) => {
   const httpLink = createHttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri: process.env.NEXT_PUBLIC_API_URL,
   });
 
   const authLink = setContext((_, { headers }) => {
