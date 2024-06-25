@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Editor, EditorState, RichUtils, convertFromRaw, convertToRaw } from 'draft-js';
 import 'draft-js/dist/Draft.css';
-import ImageUpload from '../components/imageUpload';
+import ImageUpload from '../components/ImageUpload';
 
 const EDITAR_PUBLICACION = gql`
   mutation EditarPublicacion($id: ID!, $input: PostUpdateInput!) {
