@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 const createApolloClient = (token) => {
   const httpLink = createHttpLink({
-    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`, // Usar la variable de entorno aquí
+    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`, // Usar la variable de entorno aquí y añadir /graphql
     credentials: 'include', // Incluir cookies y credenciales
   });
 
