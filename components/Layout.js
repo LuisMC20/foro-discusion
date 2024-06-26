@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   const router = useRouter();
   
   const backgroundImageUrl = "/images/layoutbg3.jpg"; // Reemplaza con la ruta de tu imagen de fondo
-  const { data } = useQuery(OBTENER_ANUNCIOS);
+  const { data, loading, error} = useQuery(OBTENER_ANUNCIOS);
 
  //if (loading) return <p>Cargando anuncios de bd...</p>;
  //if (error) return <p>Error al cargar anuncios de RENDER: {error.message}</p>;
