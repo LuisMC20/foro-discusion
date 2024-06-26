@@ -2,13 +2,12 @@ import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: `https://foro-discusiones-backend.onrender.com/graphql`, // Usar la variable de entorno aquí y añadir /graphql
-  credentials: 'include', // Asegúrate de incluir credenciales para las cookies y encabezados de autenticación
+  uri: `https://foro-discusiones-backend.onrender.com/graphql`,
+  credentials: 'include',
 });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('token');
-  console.log('Token from localStorage:', token);
   return {
     headers: {
       ...headers,
