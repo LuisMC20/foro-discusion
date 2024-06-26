@@ -21,7 +21,7 @@ const ImageUpload = ({ onFileUpload, fileType }) => {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-        withCredentials: true, // Asegura que se envíen las credenciales (cookies) si es necesario
+        withCredentials: true,
       });
       console.log('Archivo subido:', res.data.fileUrl); 
       onFileUpload(res.data.fileUrl);
