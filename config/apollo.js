@@ -3,7 +3,7 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: `https://foro-discusiones-backend.onrender.com/graphql`,
-  credentials: 'include',
+  credentials: 'include', // Permite el envío de cookies
 });
 
 const authLink = setContext((_, { headers }) => {
