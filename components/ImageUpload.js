@@ -17,13 +17,13 @@ const ImageUpload = ({ onFileUpload, fileType }) => {
 
     try {
       console.log('Iniciando subida del archivo:', file);
-      const res = await axios.post(`https://foro-discusiones-backend.onrender.com/upload`, formData, {
+      const res = await axios.post('https://foro-discusiones-backend.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
         withCredentials: true,
       });
-      console.log('Archivo subido:', res.data.fileUrl); 
+      console.log('Archivo subido:', res.data.fileUrl);
       onFileUpload(res.data.fileUrl);
       setFile(null);
     } catch (err) {
@@ -35,14 +35,14 @@ const ImageUpload = ({ onFileUpload, fileType }) => {
 
   return (
     <div className="flex items-center mb-4">
-      <input 
-        type="file" 
-        onChange={handleFileChange} 
-        className="hidden" 
+      <input
+        type="file"
+        onChange={handleFileChange}
+        className="hidden"
         id={`file-input-${fileType}`}
         accept={fileType === 'image' ? 'image/*' : 'application/pdf'}
       />
-      <label 
+      <label
         htmlFor={`file-input-${fileType}`}
         className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded cursor-pointer mr-4"
       >
