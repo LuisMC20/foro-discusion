@@ -28,7 +28,7 @@ const OBTENER_USUARIO = gql`
 
 const createApolloClient = (token) => {
   const httpLink = createHttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`, // Usar la variable de entorno aquí
   });
 
   const authLink = setContext((_, { headers }) => {
@@ -149,7 +149,6 @@ export default function LoginModal({ isOpen, onClose }) {
             <button type="submit" className="w-full flex justify-center py-1 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Ingresar
             </button>
-            
           </div>
           {mensaje && mostrarMensaje()}
         </form>
