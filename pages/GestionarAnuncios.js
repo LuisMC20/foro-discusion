@@ -46,7 +46,7 @@ const validationSchema = Yup.object({
 });
 
 const GestionarAnuncios = () => {
-  const { loading, error, data, refetch } = useQuery(OBTENER_ANUNCIOS);
+  const { data, refetch } = useQuery(OBTENER_ANUNCIOS);
   const [crearAnuncio] = useMutation(CREAR_ANUNCIO);
   const [eliminarAnuncio] = useMutation(ELIMINAR_ANUNCIO);
   const [imagenUrl, setImagenUrl] = useState('');
@@ -95,8 +95,8 @@ const GestionarAnuncios = () => {
     });
   };
 
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  // if (loading) return <p>Cargando...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
 
   return (
     <LayoutGestion>
