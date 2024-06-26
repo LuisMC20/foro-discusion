@@ -17,10 +17,11 @@ const ImageUpload = ({ onFileUpload, fileType }) => {
 
     try {
       console.log('Iniciando subida del archivo:', file);
-      const res = await axios.post('http://localhost:4000/upload', formData, {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+        withCredentials: true, // Asegura que se envíen las credenciales (cookies) si es necesario
       });
       console.log('Archivo subido:', res.data.fileUrl); 
       onFileUpload(res.data.fileUrl);
