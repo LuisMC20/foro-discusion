@@ -17,7 +17,7 @@ const ImageUpload = ({ onFileUpload, fileType }) => {
 
     try {
       console.log('Iniciando subida del archivo:', file);
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formData, {
+      const res = await axios.post(`https://foro-discusiones-backend.onrender.com/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
