@@ -28,7 +28,7 @@ const OBTENER_USUARIO = gql`
 
 const createApolloClient = (token) => {
   const httpLink = createHttpLink({
-    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`, // Usar la variable de entorno aquí
+    uri: `https://foro-discusiones-backend.onrender.com/graphql`, // Usar la variable de entorno aquí
   });
 
   const authLink = setContext((_, { headers }) => {
